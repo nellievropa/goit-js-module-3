@@ -67,17 +67,34 @@ console.log(colorPickerData);
 // теж саме з об'єктами: складний тип і тому 2 об'єкти можуть бути рівні тільки тоді, коли це посилання на один об'єкт, одну адресу
 
 
-const a = { x: 1, y: 2};
-const b = a;
+// const a = { x: 1, y: 2};
+// const b = a;
 
 // в консоль виводиться фальс
-console.log({ a: 1 } === { a: 1 });
+// console.log({ a: 1 } === { a: 1 });
 // тут в консольвиведеться тру, тому що в Б записується посилання (Ссилка) на А
-console.log(b === a);
+// console.log(b === a);
 
-a.c = 100;
-b.c = 150;
+// a.c = 100;
+// b.c = 150;
+
 // вони рівні, бо ссика на них одна
-console.log(a);
-console.log(b);
+// console.log(a);
+// console.log(b);
 
+// масив і функція- це об'єкти
+
+// massive
+const a = [1, 2, 3, 4];
+
+a.hello = ':)';
+console.log(a);
+
+// Function
+
+const fn = function () {
+    console.log('hello');
+}
+
+fn.hello = ':)';
+console.dir(fn.hello);
