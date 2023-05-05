@@ -51,9 +51,9 @@ for (const friend of allFriends) {
     
 }
 // коли цикл закінчився, виведеться масив з імен
-console.log(names);
+return names;
 };
 
-
+console.log(getAllNames(friends));
 
 
