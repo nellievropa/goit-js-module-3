@@ -50,5 +50,10 @@ for (const friend of allFriends) {
     names.push(friend.name);
     
 }
+// коли цикл закінчився, виведеться масив з імен
 console.log(names);
 };
+
+
+
+
