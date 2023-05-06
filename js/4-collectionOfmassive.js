@@ -8,7 +8,7 @@ const friends = [
 ];
 
 // виводить таблицею
-console.table(friends);
+// console.table(friends);
 
 // можно працювати як з масивом
 // отримуємо доступ до кожно об'єкту масиву
@@ -46,7 +46,7 @@ const getAllNames = function (allFriends) {
     // const totalName = 0;
 
 for (const friend of allFriends) {
-    console.log(friend.name);
+    // console.log(friend.name);
 
     names.push(friend.name);
     // totalName += friend;
@@ -56,8 +56,94 @@ for (const friend of allFriends) {
     return names;
     // return totalName;
 };
+// console.log(getAllNames(friends));
 
-console.log(getAllNames(friends));
+// получить всех друзей , которіе онлайн и всю информацию о них
+
+// const getOnlineFriends = function (allFriends) {
+//     const onlineFriends = [];
+
+//     for (const friend of allFriends) {
+//         console.log(friend);
+
+//         if (friend.online) {
+//             onlineFriends.push(friend);
+//         }
+//     }
+//     return onlineFriends;
+// };
+// console.log(getOnlineFriends(friends));
+
+
+// получить все друзей, которіе оффлайн
+
+const getOfflineFriends = function (allFriends) {
+    const offlineFriends = [];
+
+    for (const friend of allFriends) {
+        // console.log(friend);
+// friend.online === false - це теж саме, що нижче записано
+        if (!friend.online) {
+            offlineFriends.push(friend);
+        }
+    }
+    return offlineFriends;
+};
+console.log(getOfflineFriends(friends));
+
+// щоб вивести зразу обидва масиви і онлай і офлайн
+
+// const getFriendsByOnlineStatus = function (allFriends) {
+//     const friendByStatus = {
+//         online: [],
+//         offline: []
+//     };
+//     for (const friend of allFriends) {
+//         console.log(friend);
+//         if (friend.online) {
+//             friendByStatus.online.push(friend);
+//             continue;
+//             // тоді else не потрібен
+//         }
+//         friendByStatus.offline.push(friend);
+// }
+
+//     return friendByStatus;
+// }
+
+// console.log(getFriendsByOnlineStatus(friends));
+
+// как узнать количество свойств в этос объекте,?
+
+const x = {
+    a: 1,
+    b: 25,
+    c: 65,
+    d: 100
+}
+
+console.log(Object.keys(x).length);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // із автоперевірки шукаємо по співпадінню з ім'ям, а виводимо значення ціни продукту
 
@@ -68,20 +154,20 @@ const products = [
   { name: "Grip", price: 1200, quantity: 9 },
 ];
 
-console.table(products);
+// console.table(products);
 
 function getProductPrice(productName) {
   // Change code below this line
-    const price = '';
-
-    for (const product of productName) {
-        console.log(product.name);
+      for (const product of productName) {
+        // console.log(product.price);
+        
+        if (productName === product.name) {
+            return product.price;
+        }
+            
     }
-
-
-
-
+    return 'null';
   // Change code above this line
 };
-
+// console.log(getProductPrice(products));
 
