@@ -115,6 +115,55 @@ console.log(getOfflineFriends(friends));
 
 // как узнать количество свойств в этос объекте,?
 
+// шукаемо об'єкт продукту за ім'ям, а виводимо його ціну
+
+// const products = [
+//     { name: "Radar", price: 1300, quantity: 4 },
+//     { name: "Scanner", price: 2700, quantity: 3 },
+//     { name: "Droid", price: 400, quantity: 7 },
+//     { name: "Grip", price: 1200, quantity: 9 },
+//   ];
+  
+//   function getProductPrice(productName) {
+//     // Change code below this line
+   
+//         for (const product of products) {
+//           // console.log(product.price);
+          
+//           if (product.name === productName) {
+//               return product.price;
+//           }
+              
+//       }
+//       return null;
+//     // Change code above this line
+//   };
+//   console.log(getProductPrice(products));
+
+
+const products = [
+    { name: "Radar", price: 1300, quantity: 4 },
+    { name: "Scanner", price: 2700, quantity: 3 },
+    { name: "Droid", price: 400, quantity: 7 },
+    { name: "Grip", price: 1200, quantity: 9 },
+  ];
+  
+  function getAllPropValues(propName) {
+    // Change code below this line
+//   const massiveOfProducts = Object.value;
+  
+    for (const product of products) {
+       if (product.keys === propName)
+         return get(product.value);
+    }
+  
+  return [];
+    // Change code above this line
+  }
+  console.log(getAllPropValues("name"));
+  console.log(getAllPropValues("quantity"));
+
+
 const x = {
     a: 1,
     b: 25,
@@ -145,29 +194,4 @@ console.log(Object.keys(x).length);
 
 
 
-// із автоперевірки шукаємо по співпадінню з ім'ям, а виводимо значення ціни продукту
-
-const products = [
-  { name: "Radar", price: 1300, quantity: 4 },
-  { name: "Scanner", price: 2700, quantity: 3 },
-  { name: "Droid", price: 400, quantity: 7 },
-  { name: "Grip", price: 1200, quantity: 9 },
-];
-
-// console.table(products);
-
-function getProductPrice(productName) {
-  // Change code below this line
-      for (const product of productName) {
-        // console.log(product.price);
-        
-        if (productName === product.name) {
-            return product.price;
-        }
-            
-    }
-    return 'null';
-  // Change code above this line
-};
-// console.log(getProductPrice(products));
 
