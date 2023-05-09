@@ -153,7 +153,7 @@
 const profile = {
     name: 'Jacque Gluke',
     tag: 'jgluke',
-    location: 'Ocho Rios, Jamaica',
+    // location: 'Ocho Rios, Jamaica',
     avatar: 'https:s3.amazon.com',
     stats: {
         followers: 5683,
@@ -163,5 +163,62 @@ const profile = {
 };
 
 
-const {name, tag, location, avatar} = profile;
-console.log(name, tag, location);
+// const { name, tag, avatar, stats: { followers, views, likes }, } = profile;
+//це перший способ вище
+// це другий способ нижче, записи аналогічні
+// const { followers, views, likes } = stats;
+
+// і все це можна звести до такого записуЖ
+const name = profile.name;
+const tag = profile.tag;
+const followers = profile.stats.followers;
+
+// console.log(name, tag, avatar, followers, views, likes);
+
+
+// деструктуризація массиву!!!
+
+const rgb = [255, 100, 80];
+// записується деструктуризація так:
+// const [a, b, c] = rgb;
+// в якому порядку записані змінні - в такому ж порядку туди попадуть данні
+// якщо треба пропустити властивість, то пишем так, але тоді і виводимо тільки 2 властивості
+const [a, , c] = rgb;
+console.log(a, c);
+
+
+
+const authors = {
+    kiwi: 4,
+    poly: 7,
+    ajax: 8,
+    mango: 6,
+};
+
+// перший метод найти найвищий рейтинг , але не видасть ім'я автора
+// const rating = Object.values(authors);
+// console.log(Math.max(...rating));
+
+// Другий метод
+// const keys = Object.keys(authors);
+
+// for (const key of keys) {
+//     console.log(key);
+//     console.log(authors[key]);
+// }
+
+// ще один 3 метод через entries -буде виводитись масивами
+
+const entries = Object.entries(authors);
+//  console.log(entries);
+
+ for (const [ name, rating] of entries) {
+    // console.log(entry);
+    // те, що нижче можна записати взагалі так, як вище
+    // const [ name, rating] = entry;
+// те, що нижче можна записати ще й так:
+//   const name = entry[0];
+//   const rating = entry[1];
+
+  console.log(name, rating);
+ }
