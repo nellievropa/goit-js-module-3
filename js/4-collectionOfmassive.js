@@ -152,14 +152,16 @@ const products = [
     // Change code below this line
 //   const massiveOfProducts = Object.value;
   
-    for (const product of products) {
-       if (product.keys === propName)
-         return get(product.value);
+const propNames = [];
+
+for (const product of products) {
+    if (product[propName]) {
+        propNames.push(product[propName]);
     }
-  
-  return [];
-    // Change code above this line
-  }
+}
+return propNames;
+// Change code above this line
+}
   console.log(getAllPropValues("name"));
   console.log(getAllPropValues("quantity"));
 
