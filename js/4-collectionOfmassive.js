@@ -141,29 +141,65 @@ console.log(getOfflineFriends(friends));
 //   console.log(getProductPrice(products));
 
 
-const products = [
+// const products = [
+//     { name: "Radar", price: 1300, quantity: 4 },
+//     { name: "Scanner", price: 2700, quantity: 3 },
+//     { name: "Droid", price: 400, quantity: 7 },
+//     { name: "Grip", price: 1200, quantity: 9 },
+//   ];
+  
+//   function getAllPropValues(propName) {
+//     // Change code below this line
+// //   const massiveOfProducts = Object.value;
+  
+// const propNames = [];
+
+// for (const product of products) {
+//     if (product[propName]) {
+//         propNames.push(product[propName]);
+//     }
+// }
+// return propNames;
+// // Change code above this line
+// }
+//   console.log(getAllPropValues("name"));
+//   console.log(getAllPropValues("quantity"));
+
+
+  const products = [
     { name: "Radar", price: 1300, quantity: 4 },
     { name: "Scanner", price: 2700, quantity: 3 },
     { name: "Droid", price: 400, quantity: 7 },
     { name: "Grip", price: 1200, quantity: 9 },
   ];
   
-  function getAllPropValues(propName) {
+  function calculateTotalPrice(productName) {
     // Change code below this line
-//   const massiveOfProducts = Object.value;
+  let totalPrice = 0;
   
-const propNames = [];
-
-for (const product of products) {
-    if (product[propName]) {
-        propNames.push(product[propName]);
+  
+    for (const product of products) {
+     
+      if(product.name === productName) {
+           const price = productName.price;
+    const quantity = productName.quantity;
+        totalPrice = product.price * product.quantity;
+      }
     }
-}
-return propNames;
-// Change code above this line
-}
-  console.log(getAllPropValues("name"));
-  console.log(getAllPropValues("quantity"));
+  
+  return totalPrice;
+    // Change code above this line
+  }
+
+  console.log(calculateTotalPrice("Radar"));
+  console.log(calculateTotalPrice("Droid"));
+
+
+
+
+
+
+
 
 
 const x = {

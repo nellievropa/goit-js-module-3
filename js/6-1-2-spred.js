@@ -32,6 +32,16 @@
 // ничже в змінну Б додасться посилання на А
 // const b = [a];
 
+// з АВТОПЕРЕВІРКИ
+// const scores = [89, 64, 42, 17, 93, 51, 26];
+// // Change code below this line
+// const bestScore = Math.max(...scores);
+// const worstScore = Math.min(...scores);
+
+// console.log(bestScore);
+// console.log(worstScore);
+
+
 
 // якщо А буде із об'єктів То виглядатиме так
 
@@ -186,7 +196,7 @@ const rgb = [255, 100, 80];
 const [a, , c] = rgb;
 console.log(a, c);
 
-
+// Це рейтінг авторів і ми будемо з ним працювати
 
 const authors = {
     kiwi: 4,
@@ -222,3 +232,67 @@ const entries = Object.entries(authors);
 
   console.log(name, rating);
  }
+
+//  Із автоперевірки - звернути увагу на те, як записана деструктурізація!
+//  const colors = [
+//     { hex: "#f44336", rgb: "244,67,54" },
+//     { hex: "#2196f3", rgb: "33,150,243" },
+//     { hex: "#4caf50", rgb: "76,175,80" },
+//     { hex: "#ffeb3b", rgb: "255,235,59" },
+//   ];
+  
+//   const hexColors = [];
+//   const rgbColors = [];
+//   // Change code below this line
+  
+//   for (const {hex, rgb} of colors) {
+  
+//     hexColors.push(hex);
+//     rgbColors.push(rgb);
+//   }
+//    console.log(hexColors);
+//   console.log(rgbColors);
+
+// ІЗ автоперевірки : на увагу до записів
+
+const forecast = {
+    today: {
+      low: 28,
+      high: 32,
+      icon: "https://www.flaticon.com/svg/static/icons/svg/861/861059.svg",
+    },
+    tomorrow: {
+      low: 27,
+      high: 31,
+    },
+  };
+  // Change code below this line
+  
+//   const highToday = forecast.today.high;
+//   const lowToday = forecast.today.low;
+//   const todayIcon = forecast.today.icon;
+  
+//   const highTomorrow = forecast.tomorrow.high;
+//   const lowTomorrow = forecast.tomorrow.low;
+//   const tomorrowIcon = forecast.tomorrow.icon;
+  
+const {today:  {low: lowToday, 
+    high: highToday, 
+icon: todayIcon = "https://www.flaticon.com/svg/static/icons/svg/861/861059.svg"}, 
+tomorrow: {low: lowTomorrow, 
+      high: highTomorrow, 
+      icon: tomorrowIcon = "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg"} } = forecast;
+
+
+// З автоперевірки : синтаксис!!!
+
+    //   function calculateMeanTemperature(forecast) {
+    //     // const todayLow = forecast.today.low;
+    //     // const todayHigh = forecast.today.high;
+    //     // const tomorrowLow = forecast.tomorrow.low;
+    //     // const tomorrowHigh = forecast.tomorrow.high;
+    //   const { today: {low: todayLow, high: todayHigh}, tomorrow: {low: tomorrowLow, high: tomorrowHigh} } = forecast;
+    //     // Change code above this line
+    //     return (todayLow + todayHigh + tomorrowLow + tomorrowHigh) / 4;
+    //   }
+    //   console.log (calculateMeanTemperature({ today: {low: 28, high: 32}, tomorrow: {low: 25, high: 29} }));
