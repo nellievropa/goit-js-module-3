@@ -160,17 +160,17 @@
 // глибока деструктуризація( при вкладених об'єктах)
 
 
-const profile = {
-    name: 'Jacque Gluke',
-    tag: 'jgluke',
-    // location: 'Ocho Rios, Jamaica',
-    avatar: 'https:s3.amazon.com',
-    stats: {
-        followers: 5683,
-        views: 4827,
-        likes: 1308,
-    },
-};
+// const profile = {
+//     name: 'Jacque Gluke',
+//     tag: 'jgluke',
+//     // location: 'Ocho Rios, Jamaica',
+//     avatar: 'https:s3.amazon.com',
+//     stats: {
+//         followers: 5683,
+//         views: 4827,
+//         likes: 1308,
+//     },
+// };
 
 
 // const { name, tag, avatar, stats: { followers, views, likes }, } = profile;
@@ -227,8 +227,8 @@ const entries = Object.entries(authors);
     // те, що нижче можна записати взагалі так, як вище
     // const [ name, rating] = entry;
 // те, що нижче можна записати ще й так:
-//   const name = entry[0];
-//   const rating = entry[1];
+//   const name = entry[0];-перший елемент масиву
+//   const rating = entry[1]; - другий елемент масиву
 
   console.log(name, rating);
  }
@@ -296,3 +296,28 @@ tomorrow: {low: lowTomorrow,
     //     return (todayLow + todayHigh + tomorrowLow + tomorrowHigh) / 4;
     //   }
     //   console.log (calculateMeanTemperature({ today: {low: 28, high: 32}, tomorrow: {low: 25, high: 29} }));
+
+
+    // З автоперевірки : робота з функціями- не забувати повертати значення!!!
+    function makeTask(data) {
+      const completed = false;
+      const category = "General";
+      const priority = "Normal";
+      // Change code below this line
+    const makeTask = {completed, category, priority, ...data};
+      return makeTask;
+      // Change code above this line
+    }
+    console.log(makeTask({}));
+    console.log(makeTask({ category: "Homemade", priority: "Low", text: "Take out the trash" }));
+    console.log(makeTask({ category: "Finance", text: "Take interest" }));
+    console.log(makeTask({ priority: "Low", text: "Choose shampoo" }));
+    console.log(makeTask({ text: "Buy bread" }));
+
+    function multiply(...args) {
+      console.log(args); // масив усіх аргументів
+    }
+    
+    multiply(1, 2);
+    multiply(1, 2, 3);
+    multiply(1, 2, 3, 4);
