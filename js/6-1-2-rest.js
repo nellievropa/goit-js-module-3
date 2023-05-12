@@ -74,7 +74,6 @@ showProfileInfo(profile);
 
 
 
-
 // Із автоперевірки 
 // function addOverNum(...args) {
 //     let total = 0;
