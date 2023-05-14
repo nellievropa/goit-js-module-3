@@ -121,12 +121,17 @@ console.table(cart.getItems());
 
 console.log('Total price: ', cart.countTotalPrice());
 
-cart.clear();
-console.log(cart.getItems());
+// cart.clear();
+// console.log(cart.getItems());
 
 cart.countTotalPrice();
 
 
+const getProductTotalPrice = function ({ price, quantity }) {
+  return price * quantity;
+};
+
+console.log(getProductTotalPrice(cart.items[2]));
 
 
 
