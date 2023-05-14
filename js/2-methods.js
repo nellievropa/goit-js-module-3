@@ -58,3 +58,54 @@ playlist.addTrack('new track1');
 playlist.updateRating(5.8);
 console.log(playlist);
 console.log(playlist.getTrackCount());
+
+
+// Із автоперевірки
+
+// const bookShelf = {
+//   // Change code below this line
+//   books: ["The last kingdom", "The guardian of dreams"],
+//   getBooks() {
+//   return `Returning all books`;
+//   },
+//   addBook(bookName) {
+//       this.books.push(bookName);
+      
+//     //   return `Adding book ${bookName}`; - на платформі працює тільки так, а в коді - як на 75 строке
+//       console.log(`Adding book ${bookName}`);
+//   },
+//   removeBook(bookName) {
+//     const bookIndex = this.books.indexOf(bookName);
+//     this.books.splice(bookIndex, 1);
+//     return `Deleting book ${bookName}`;
+//   },
+//   updateBook(oldName, newName) {
+//     // const oldName = bookName;
+//     this.oldName = newName;
+//    return `Updating book ${oldName} to ${newName}`;
+//   },
+//   // Change code above this line
+// };
+// bookShelf.getBooks();
+// bookShelf.addBook("Haze");
+// bookShelf.removeBook('Red sunset');
+// bookShelf.updateBook("Sands of Dune", "Dune");
+
+
+
+// з автоперевірки , але якось дивно
+const bookShelf = {
+	books: ['The last kingdom', 'Haze', 'The guardian of dreams'],
+	updateBook(oldName, newName) {
+		// Change code below this line
+		const index = this.books.indexOf(oldName);
+		this.books.splice(index, 1, newName);
+        return this.books;
+   
+    // Change code above this line
+  },
+};
+bookShelf.updateBook("Haze", "Dungeon chronicles");
+console.log(bookShelf.updateBook());
+bookShelf.updateBook("The last kingdom", "Dune");
+console.log(bookShelf.updateBook());

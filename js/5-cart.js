@@ -13,8 +13,26 @@ const cart = {
     getItems() {
       return this.items;
      },
-    add(product) {
-      this.items.push(product);
+  add(product) {
+// щоб додати продукт якщо він уже є, нам треба перебрати масив items!
+    for (const item of this.items) {
+      // console.log(item);
+      // потім перебираємо і порівнюємо
+
+      if (item.name === product.name) {
+        // console.log(`Такий продукт вже є:`, product.name);
+        // додаємо його в quantity
+        item.quantity += 1;
+        return;
+      }
+    }
+
+      // щоб рахувати кількість однакових продуктів створюєм новий об'єкт
+    const newProduct = {
+      ...product,
+      quantity: 1,
+    }
+      this.items.push(newProduct);
      },
     remove(productName) { 
       // якщо нам потрібно перебрати масив по індексам пишем так
@@ -72,9 +90,9 @@ const { items } = this;
       //   console.log(item);
       //   total += item.price;
       // }
-      for (const { price } of items) {
+      for (const { price, quantity } of items) {
        
-        total += price;
+        total += price * quantity;
       }
       return total;
     },
